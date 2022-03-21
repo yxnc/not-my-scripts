@@ -1,0 +1,32 @@
+Settings = {
+   MuteMusicsInGame = true, --disable musics ingame
+   NotificationSound = true, --play a loud sound when it found a df
+   IsInVipServer = false, --set to "true" if you are in a vip server
+   AutoEat = false,
+   FruitsThatYouWant = {
+--TYPE EXACT FRUITS NAME
+    "Revive Fruit",
+    "Soul Fruit",
+    "Shadow Fruit",
+    "Flame Fruit",
+    "Ice Fruit",
+    "Venom Fruit",
+    "Dark Fruit",
+    "Light Fruit",
+    "Rubber Fruit",
+    "Love Fruit",
+    "Magma Fruit",
+    "Quake Fruit",
+    "Human: Buddha Fruit",
+    "String Fruit",
+    "Bird: Phoenix Fruit",
+    "Rumble Fruit",
+    "Paw Fruit",
+    "Gravity Fruit",
+    "Dough Fruit",
+    "Control Fruit",
+    "Dragon Fruit"
+   }
+}
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GodClass/EpicScripts/main/Blox%20Fruit%20DF%20Script.txt'))()
