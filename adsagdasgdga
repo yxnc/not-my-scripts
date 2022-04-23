@@ -1,0 +1,47 @@
+for i, v in pairs(getconnections(game:GetService("ScriptContext").Error)) do
+    v:Disable()
+end
+
+local oldindex = nil
+oldindex =
+    hookmetamethod(
+    game,
+    "__index",
+    function(Self, Key)
+        if not checkcaller() and Self == "HumanoidRootPart" or not checkcaller() and Self == "Torso" then
+            if Key == "CFrame" and Self:IsDescendantOf(LocalPlayer.Character) then
+                return true
+            end
+        end
+        return oldindex(Self, Key)
+    end
+)
+
+local oldnamecall = nil
+oldnamecall =
+    hookmetamethod(
+    game,
+    "__namecall",
+    function(Self, ...)
+        local namecallmethod = getnamecallmethod()
+        if tostring(string.lower(namecallmethod)) == "kick" then
+            return nil
+        end
+        return oldnamecall(Self, ...)
+    end
+)
+
+local devconsolehook
+devconsolehook =
+    hookfunction(
+    startergui.SetCore,
+    newcclosure(
+        function(Self, ...)
+            local args = table.pack(...)
+            if args[1] == "DevConsoleVisible" then
+                args[1] = "PointsNotificationsActive"
+            end
+            return devconsolehook(Self, table.unpack(args, 1, args.n))
+        end
+    )
+)
