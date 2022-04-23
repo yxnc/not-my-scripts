@@ -1,5 +1,5 @@
 OrionLib:MakeNotification({
-	Name = "Title!",
-	Content = "Notification content... what will it say??",
-	Time = 5
+	Name = "Success",
+	Content = "Galaxy block spawned!",
+	Time = 3
 })
